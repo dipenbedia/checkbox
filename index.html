@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Francois+One|poppins&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<title>Check box</title>
+	<script src='js/jquery.min.js'></script>
+	<script src='js/bootstrap.js'></script>
+	<script src='js/popper.min.js'></script>
+	<style>
+		b,input[type='submit']{
+			font-family: "Francois One",sans-serif;
+			font-weight: normal;
+		}
+	</style>
+</head>
+<body class='p-4'>
+
+	<div class='container shadow-sm p-5'>
+		<form>
+		<fieldset class='border p-3'>
+			<legend class='border pl-3' style='width:200px;font-family:"Francois One",sans-serif'>Select your skill</legend>
+
+			<input type="checkbox" name='asp.net' id='asp.net' class='checkbox' check='checked'>
+			<b>Asp.Net</b>
+
+			<input type="checkbox" name='vb.net' id='vb.net' class='checkbox' check='checked'>
+			<b>VB.net</b>
+
+			<input type="checkbox" name='jquery' id='jquery' class='checkbox' check='checked'>
+			<b>JQuery</b>
+			<br>
+			<input type="checkbox" name='C#.net' id='c#.net' class='checkbox' check='checked'>
+			<b>C#.Net</b>
+
+			<input type="checkbox" name='mvc' id='mvc' class='checkbox' check='checked'>
+			<b>MVC</b>
+
+			<input type="checkbox" name='java-script' id='java-script' class='checkbox' check='checked'>
+			<b>Java Script</b>
+
+			<br><br>
+			<div class='btn-group'>
+			<input type="submit" value='Submit' class='form-control bg-primary border-0' style='width:100px;color:#fff' id='submit'>
+
+			<b id='message' class='text-success ml-3 mt-2'></b>
+			</div>
+
+		</fieldset>
+	</form>
+	</div>
+	
+	<script>
+		
+		var submit_btn = document.getElementById('submit');
+		var message = document.getElementById('message');
+		var box_one = document.getElementsByClassName('checkbox')[0];
+		var box_two = document.getElementsByClassName('checkbox')[1];
+		var box_three = document.getElementsByClassName('checkbox')[2];
+		var box_four = document.getElementsByClassName('checkbox')[3];
+		var box_five = document.getElementsByClassName('checkbox')[4];
+		var box_six = document.getElementsByClassName('checkbox')[5];
+		submit_btn.onclick = function(e)
+		{
+			e.preventDefault();
+			if(box_one.checked || box_two.checked || box_three.checked || box_four.checked || box_five.checked || box_six.checked)
+			{
+				message.innerHTML = 'Validation successfully passed';
+			}
+			else{
+				window.alert('Please choose atleast one skill');
+			}
+
+		}
+
+
+	</script>
+</body>
+</html>
